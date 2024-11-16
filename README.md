@@ -11,6 +11,7 @@ composer require secureid/secureidsdk
 
 # Utilisation
 **1. Importer le SDK**
+
 Ajoutez le namespace du SDK dans votre contrôleur ou votre script PHP :
 ```bash
 use Secureid\Secureidsdk\SecureID;
@@ -23,6 +24,7 @@ Initialisez une instance de SecureID :
 $secureidsdk = new SecureID();
 ```
 **3. Utiliser les fonctionnalités du SDK**
+
 Voici les principales fonctionnalités offertes par le SDK :
 
 **- Récupérer tous les enregistrements**
