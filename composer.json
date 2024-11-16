@@ -1,6 +1,6 @@
 {
     "name": "secureid/secureidsdk",
-    "description": "Ce kit de développement logiciel (Software Development Kit ou SDK) est un SDK dédié à l'API, conçu pour faciliter la communication et l'intégration d'une API de gestion des sauvegardes d'identifiants dans notre projet Laravel, nommé SecureID. Cette API repose sur la technologie Node.js, en particulier le framework ExpressJS, et utilise une base de données NoSQL, MongoDB, avec le package Mongoose.",
+    "description": "Ce Kit de Développement Logiciel (Software Development Kit ou SDK) est un SDK dédié à l'API, conçu pour faciliter la communication et l'intégration d'une API de gestion des sauvegardes d'identifiants dans notre projet Laravel, nommé SecureID.",
     "version": "1.0.1",
     "license": "MIT",
     "homepage": "https://github.com/SMH-Software/secureid-sdk",
