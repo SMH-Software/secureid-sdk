@@ -1,6 +1,5 @@
 # SecureIDSDK
 
-Description
 `SecureIDSDK` est un **kit de développement logiciel (SDK)** conçu pour simplifier l'intégration d'une API dédiée à la gestion des identifiants dans un projet Laravel. Ce SDK offre une interface intuitive pour effectuer des opérations CRUD sur une API SecureID. L'API SecureID est construite avec Node.js et le framework ExpressJS, et repose sur une base de données NoSQL MongoDB via le package Mongoose.
 
 # Installation
