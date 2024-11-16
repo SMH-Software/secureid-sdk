@@ -10,37 +10,43 @@ composer require secureid/secureidsdk
 ```
 
 # Utilisation
-1. Importer le SDK
-   
+**1. Importer le SDK**
 Ajoutez le namespace du SDK dans votre contrôleur ou votre script PHP :
+```bash
 use Secureid\Secureidsdk\SecureID;
+```
 
-2. Créer une instance du SDK
+**2. Créer une instance du SDK**
    
 Initialisez une instance de SecureID :
+```bash
 $secureidsdk = new SecureID();
-
-3. Utiliser les fonctionnalités du SDK
+```
+**3. Utiliser les fonctionnalités du SDK**
 Voici les principales fonctionnalités offertes par le SDK :
 
-- Récupérer tous les enregistrements
+**- Récupérer tous les enregistrements**
+```bash
 $response = $secureidsdk->getAll();
+```
 
-- Récupérer un enregistrement par son ID
+**- Récupérer un enregistrement par son ID**
+```bash
 $id = 'exemple-id';
 $response = $secureidsdk->getById($id);
+```
 
-- Créer un nouvel enregistrement
-  
+**- Créer un nouvel enregistrement**
+```bash  
 $data = [
     'title' => 'My Title',
     'username' => 'my_username',
     'password' => 'my_password',
 ];
 $response = $secureidsdk->create($data);
-
-- Mettre à jour un enregistrement par son ID
-
+```
+**- Mettre à jour un enregistrement par son ID**
+```bash 
 $id = 'exemple-id';
 $data = [
     'title' => 'Updated Title',
@@ -48,8 +54,10 @@ $data = [
     'password' => 'updated_password',
 ];
 $response = $secureidsdk->update($id, $data);
+```
 
-- Supprimer un enregistrement par son ID
-
+**- Supprimer un enregistrement par son ID**
+```bash 
 $id = 'exemple-id';
 $response = $secureidsdk->delete($id);
+```
