@@ -1,67 +1,62 @@
-#SecureIDSDK
+SecureIDSDK
 
-#Description
+Description
+SecureIDSDK est un kit de développement logiciel (SDK) conçu pour simplifier l'intégration d'une API dédiée à la gestion des identifiants dans un projet Laravel. Ce SDK offre une interface intuitive pour effectuer des opérations CRUD sur une API SecureID. L'API SecureID est construite avec Node.js et le framework ExpressJS, et repose sur une base de données NoSQL MongoDB via le package Mongoose.
 
-Ce kit de développement logiciel (Software Development Kit ou SDK) est un SDK dédié à l'API, conçu pour faciliter la communication et l'intégration d'une API de gestion des sauvegardes d'identifiants dans un projet Laravel, nommé SecureID. Cette API repose sur la technologie Node.js, en particulier le framework ExpressJS, et utilise une base de données NoSQL, MongoDB, avec le package Mongoose.
+Installation
+Pour installer le package via Composer, exécutez la commande suivante :
 
-#Installation
+bash
+Copier le code
+composer require secureid/secureidsdk
+Utilisation
+1. Importer le SDK
+Ajoutez le namespace du SDK dans votre contrôleur ou votre script PHP :
 
-Exécutez la commande suite : composer require secureid/secureidsdk
+php
+Copier le code
+use Secureid\Secureidsdk\SecureID;
+2. Créer une instance du SDK
+Initialisez une instance de SecureID :
 
-#Utilisation
+php
+Copier le code
+$secureidsdk = new SecureID();
+3. Utiliser les fonctionnalités du SDK
+Voici les principales fonctionnalités offertes par le SDK :
 
-1 - Charger le package à l'aide de la syntaxe suivante dans le controller: 
-use Secureid\Secureidsdk\SecureID
+Récupérer tous les enregistrements
+php
+Copier le code
+$response = $secureidsdk->getAll();
+Récupérer un enregistrement par son ID
+php
+Copier le code
+$id = 'exemple-id';
+$response = $secureidsdk->getById($id);
+Créer un nouvel enregistrement
+php
+Copier le code
+$data = [
+    'title' => 'My Title',
+    'username' => 'my_username',
+    'password' => 'my_password',
+];
 
-2 - Créer une instance à l'aide de la syntaxe suivante : 
-$secureidsdk = new SecureID()
+$response = $secureidsdk->create($data);
+Mettre à jour un enregistrement par son ID
+php
+Copier le code
+$id = 'exemple-id';
+$data = [
+    'title' => 'Updated Title',
+    'username' => 'updated_username',
+    'password' => 'updated_password',
+];
 
-3 - Utiliser cette instance pour appeler les différente fonction disponible comme suit :
-
--   Récupère tous les enregistrements de l'API
-    $secureidsdk->getAll() 
-    
--   Récupère un enregistrement par son ID
-    /**
-    * @param string $id
-    */
-    $secureidsdk->getById($id)
-
--   Crée un nouvel enregistrement dans l'API
-    /**
-    * @param array $data
-    */
-
-    $data = [
-        'title' => '',
-        'username' => '',
-        'password' => '',
-        'title' => ''
-    ];
-
-    $secureidsdk->update($data);
-    
--   Met à jour un enregistrement par son ID
-
-    /**
-    * @param string $id
-    * @param array $data
-    */
-
-    $data = [
-        'title' => '',
-        'username' => '',
-        'password' => '',
-        'title' => ''
-    ];
-
-    $secureidsdk->update($id, $data);
-   
--   Supprime un enregistrement par son ID.
-    /**
-    * @param string $id
-    */
-    $secureidsdk->getAll($id) 
-
-
-
+$response = $secureidsdk->update($id, $data);
+Supprimer un enregistrement par son ID
+php
+Copier le code
+$id = 'exemple-id';
+$response = $secureidsdk->delete($id);
