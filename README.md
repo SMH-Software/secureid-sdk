@@ -22,14 +22,12 @@ $secureidsdk = new SecureID()
     $secureidsdk->getAll() 
     
 -   Récupère un enregistrement par son ID
-
     /**
     * @param string $id
     */
     $secureidsdk->getById($id)
 
 -   Crée un nouvel enregistrement dans l'API
-    
     /**
     * @param array $data
     */
@@ -60,7 +58,6 @@ $secureidsdk = new SecureID()
     $secureidsdk->update($id, $data);
    
 -   Supprime un enregistrement par son ID.
-
     /**
     * @param string $id
     */
