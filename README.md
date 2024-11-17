@@ -77,9 +77,9 @@ use Secureid\Secureidsdk\SecureID;
 class SecureIDSDKController extends Controller
 {
 
-    /**
-    * Récupère tous les enregistrements de l'API.
-    */ 
+    
+    // Récupère tous les enregistrements de l'API.
+     
     public function readAll(SecureID $secureidsdk){
         $response = $secureidsdk->getAll();
 
@@ -87,18 +87,16 @@ class SecureIDSDKController extends Controller
     }
 
     
-    /**
-    * Récupère un enregistrement par son ID.
-    */
+    // Récupère un enregistrement par son ID.
+    
     public function readOne(SecureID $secureidsdk, string $id){
         $response = $secureidsdk->getById($id);
         
         return $response;
     }
 
-    /**
-    * Crée un nouvel enregistrement dans l'API.
-    */
+    // Crée un nouvel enregistrement dans l'API.
+   
     public function create(SecureID $secureidsdk){
        
         $data = [
@@ -112,9 +110,8 @@ class SecureIDSDKController extends Controller
         return $response;
     }
 
-    /**
-    * Met à jour un enregistrement par son ID.
-    */
+    // Met à jour un enregistrement par son ID.
+    
     public function update(SecureID $secureidsdk, string $id){
        
         $data = [
@@ -129,9 +126,8 @@ class SecureIDSDKController extends Controller
         return $response;
     }
 
-    /**
-    * Supprime un enregistrement par son ID.
-    */
+    // Supprime un enregistrement par son ID.
+    
     public function delete(SecureID $secureidsdk, string $id){
        
         $response = $secureidsdk->delete($id);
