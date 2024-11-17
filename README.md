@@ -63,3 +63,81 @@ $response = $secureidsdk->update($id, $data);
 $id = 'exemple-id';
 $response = $secureidsdk->delete($id);
 ```
+
+# Exemple
+
+```bash
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Secureid\Secureidsdk\SecureID;
+
+class SecureIDSDKController extends Controller
+{
+
+    /**
+    * Récupère tous les enregistrements de l'API.
+    */ 
+    public function readAll(SecureID $secureidsdk){
+        $response = $secureidsdk->getAll();
+
+        return $response;
+    }
+
+    
+    /**
+    * Récupère un enregistrement par son ID.
+    */
+    public function readOne(SecureID $secureidsdk, string $id){
+        $response = $secureidsdk->getById($id);
+        
+        return $response;
+    }
+
+    /**
+    * Crée un nouvel enregistrement dans l'API.
+    */
+    public function create(SecureID $secureidsdk){
+       
+        $data = [
+            'title' => 'Updated Title',
+            'username' => 'updated_username',
+            'password' => 'updated_password',
+        ];
+        
+        $response = $secureidsdk->create($data);
+        
+        return $response;
+    }
+
+    /**
+    * Met à jour un enregistrement par son ID.
+    */
+    public function update(SecureID $secureidsdk, string $id){
+       
+        $data = [
+            'title' => 'Updated Title',
+            'username' => 'updated_username',
+            'password' => 'updated_password',
+            'website' => 'updated_website',
+        ];
+        
+        $response = $secureidsdk->update($id, $data);
+        
+        return $response;
+    }
+
+    /**
+    * Supprime un enregistrement par son ID.
+    */
+    public function delete(SecureID $secureidsdk, string $id){
+       
+        $response = $secureidsdk->delete($id);
+        
+        return $response;
+    }
+}
+
+```
